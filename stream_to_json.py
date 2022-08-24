@@ -17,7 +17,7 @@ class myhandler(pymarc.XmlHandler):
         dct = record.as_dict()        
         t = self.collection.insert_one(dct)
         self.count += 1        
-        if (self.count % 1000000) == 0 :
+        if (self.count % 10000) == 0 :
             print("Records parsed: {}".format(self.count))
             now = time()
             print(("Time elapsed: {}".format(now - self.start)))
